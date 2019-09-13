@@ -8,7 +8,6 @@ import { HelloResolver } from './graphql/hello.resolver';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 
-
 @Module({
   imports: [
     GraphQLModule.forRoot({
@@ -18,6 +17,7 @@ import { UsersModule } from './users/users.module';
       definitions: {
         path: join(process.cwd(), 'src/graphql.ts'),
       },
+      context: ({ req }) => ({ req }),
     }),
     AuthModule,
     UsersModule,
@@ -28,6 +28,6 @@ import { UsersModule } from './users/users.module';
   providers: [
     AppService,
     HelloResolver,
-],
+  ],
 })
-export class AppModule {}
+export class AppModule { }
