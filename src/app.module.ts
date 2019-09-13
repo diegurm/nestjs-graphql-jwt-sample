@@ -5,6 +5,8 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloResolver } from './graphql/hello.resolver';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 
 @Module({
@@ -17,6 +19,8 @@ import { HelloResolver } from './graphql/hello.resolver';
         path: join(process.cwd(), 'src/graphql.ts'),
       },
     }),
+    AuthModule,
+    UsersModule,
   ],
   controllers: [
     AppController,
