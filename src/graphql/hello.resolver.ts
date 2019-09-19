@@ -1,6 +1,6 @@
 import { Resolver, Args, Query } from '@nestjs/graphql';
 import { UseGuards } from '@nestjs/common';
-import { GqlAuthGuard } from './../auth/guards/gql-auth.guard ';
+import { GqlAuthGuard } from '../auth/guards/gql-auth.guard';
 @UseGuards(GqlAuthGuard)
 @Resolver('Hello')
 export class HelloResolver {

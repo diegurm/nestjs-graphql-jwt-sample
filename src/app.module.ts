@@ -8,6 +8,8 @@ import { HelloResolver } from './graphql/hello.resolver';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 
+import { DatabaseModule } from './database';
+
 @Module({
   imports: [
     GraphQLModule.forRoot({
@@ -21,13 +23,12 @@ import { UsersModule } from './users/users.module';
     }),
     AuthModule,
     UsersModule,
+    DatabaseModule,
   ],
-  controllers: [
-    AppController,
-  ],
+  controllers: [AppController],
   providers: [
     AppService,
     HelloResolver,
   ],
 })
-export class AppModule { }
+export class AppModule {}

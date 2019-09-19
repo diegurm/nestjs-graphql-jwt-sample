@@ -7,7 +7,7 @@ import { UsersModule } from '../users/users.module';
 import { LocalStrategy } from './strategies/local.strategy';
 import { jwtConstants } from './constants';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { GqlAuthGuard } from './guards/gql-auth.guard ';
+import { GqlAuthGuard } from './guards/gql-auth.guard';
 @Module({
   imports: [
     UsersModule,
